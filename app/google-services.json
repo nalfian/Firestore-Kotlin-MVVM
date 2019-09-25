@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "187665963210",
+    "firebase_url": "https://mvvm-livedata.firebaseio.com",
+    "project_id": "mvvm-livedata",
+    "storage_bucket": "mvvm-livedata.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187665963210:android:d830426981bdaa7c417c33",
+        "android_client_info": {
+          "package_name": "com.nalfian.firestore_mvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187665963210-aits004lt4eeokhrn7alss7bh3qa79kk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw6GE3CTy8dSzb5XKcJCPwLgPSVxXodVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187665963210-aits004lt4eeokhrn7alss7bh3qa79kk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
