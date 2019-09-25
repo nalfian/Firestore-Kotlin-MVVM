@@ -7,6 +7,6 @@ interface NoteRepository {
     
     suspend fun getNotes(): LiveData<out List<Note>>
     
-    suspend fun createNote(note: Note): Boolean
+    fun createNote(note: Note)
 
 }

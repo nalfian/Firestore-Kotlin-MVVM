@@ -38,13 +38,17 @@ class MainFragment : ScopedFragment(), KodeinAware {
 
     private fun listenEvent() {
         addNote.setOnClickListener {
-            viewModel.createNote(Note(0, "Coba", System.currentTimeMillis()))
+           createNote()
         }
+    }
+
+    private fun createNote() {
+        viewModel.createNote(Note(null, "Coba", System.currentTimeMillis()))
     }
 
     private fun bindUi() = launch {
         viewModel.notes.await().observe(this@MainFragment, Observer {
-            it
+            textView.text = it.toString()
         })
     }
 

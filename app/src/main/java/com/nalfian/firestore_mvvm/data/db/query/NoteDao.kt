@@ -11,9 +11,11 @@ import com.nalfian.firestore_mvvm.data.db.entity.Note
 interface NoteDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(note: List<Note>)
+    fun upsert(note: Note)
 
-    @Query("")
+    @Query("select * from note")
     fun getNotes(): LiveData<List<Note>>
 
+    @Query("select * from note where date = :date")
+    fun checkIsDuplicate(date: Long): List<Note>
 }

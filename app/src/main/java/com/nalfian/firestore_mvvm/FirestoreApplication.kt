@@ -8,6 +8,7 @@ import com.nalfian.firestore_mvvm.data.repository.NoteRepositoryImpl
 import com.nalfian.firestore_mvvm.ui.main.MainViewFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
+import org.kodein.di.android.x.androidXModule
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
@@ -16,6 +17,7 @@ import org.kodein.di.generic.singleton
 class FirestoreApplication : Application(), KodeinAware {
     override val kodein: Kodein
         get() = Kodein.lazy {
+            import(androidXModule(this@FirestoreApplication))
 
             bind() from singleton { FirestoreDatabase(instance()) }
             bind() from singleton { instance<FirestoreDatabase>().noteDao() }

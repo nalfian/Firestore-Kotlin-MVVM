@@ -11,7 +11,7 @@ class MainViewModel(private val noteRepository: NoteRepository) : ViewModel() {
         noteRepository.getNotes()
     }
 
-    fun createNote(note: Note) = lazyDeferred {
+    fun createNote(note: Note) {
         noteRepository.createNote(note)
     }
 }

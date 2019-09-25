@@ -10,7 +10,8 @@ import com.nalfian.firestore_mvvm.data.db.query.NoteDao
 
 @Database(
     entities = [Note::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class FirestoreDatabase : RoomDatabase() {
 
