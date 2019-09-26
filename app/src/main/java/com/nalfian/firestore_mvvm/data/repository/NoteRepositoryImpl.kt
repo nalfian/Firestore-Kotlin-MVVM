@@ -19,6 +19,7 @@ class NoteRepositoryImpl(
         for (doc in notes.documents) {
             Coroutines.io {
                 val note = doc.toObject(Note::class.java)
+                note?.id = doc.id
                 if (note?.date?.let { noteDao.checkIsDuplicate(it).size } == 0)
                     note.let { noteDao.upsert(it) }
             }

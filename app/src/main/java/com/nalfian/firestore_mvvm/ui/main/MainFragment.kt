@@ -43,7 +43,7 @@ class MainFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun createNote() {
-        viewModel.createNote(Note(null, "Coba", System.currentTimeMillis()))
+        viewModel.createNote(Note("", "Coba", System.currentTimeMillis()))
     }
 
     private fun bindUi() = launch {
