@@ -8,7 +8,7 @@ import com.nalfian.firestore_mvvm.internal.lazyDeferred
 class MainViewModel(private val noteRepository: NoteRepository) : ViewModel() {
 
     val notes by lazyDeferred {
-        noteRepository.getNotes()
+        noteRepository.getNoteServer()
     }
 
     fun createNote(note: Note) {

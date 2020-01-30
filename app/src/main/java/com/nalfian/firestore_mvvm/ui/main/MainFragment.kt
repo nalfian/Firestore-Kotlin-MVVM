@@ -1,5 +1,6 @@
 package com.nalfian.firestore_mvvm.ui.main
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -43,12 +44,19 @@ class MainFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun createNote() {
-        viewModel.createNote(Note("Coba", System.currentTimeMillis()))
+        viewModel.createNote(Note("Coba "+notes.size , System.currentTimeMillis()))
     }
 
+    var notes = ArrayList<Note>()
+    @SuppressLint("SetTextI18n")
     private fun bindUi() = launch {
         viewModel.notes.await().observe(this@MainFragment, Observer {
-            textView.text = it.toString()
+            notes.clear()
+            notes.addAll(it)
+            textView.text = ""
+            for (i in it.sortedBy { ii->ii.date }){
+                textView.text = textView.text.toString()+"\n"+i.name
+            }
         })
     }
 
